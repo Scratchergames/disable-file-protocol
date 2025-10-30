@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SWF con Ruffle</title>
+  <!-- Cargar Ruffle desde CDN -->
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+
+  <!-- Contenedor del SWF -->
+  <ruffle-player src="SearchStories.swf" width="7000" height="1000"></ruffle-player>
+
+  <script>
+    // Inicializar Ruffle (opcional, el tag <ruffle-player> lo hace automáticamente)
+    window.RufflePlayer = window.RufflePlayer || {};
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    document.body.appendChild(player);
+    player.load("SearchStories.swf");
+  </script>
+</body>
+</html>
